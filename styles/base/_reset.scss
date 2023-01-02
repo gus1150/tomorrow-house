@@ -1,15 +1,19 @@
 * {
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
+  -moz-osx-font-smoothing: grayscale; //폰트가 부드럽게 렌더
+  -webkit-font-smoothing: antialiased; //폰트가 부드럽게 렌더
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
+  font-size: $font-size-16; //html에 본문 폰트값을 넣어주면 rem의 기준이 된다.
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
+  color: $primary; //p태그의 컬러, 즉 본문 폰트의 컬러
 }
 
 h1 {
