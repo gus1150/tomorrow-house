@@ -1,0 +1,24 @@
+%avatar-base {
+  display: block; // 무조건 div를 쓴다는 보장이 없기 때문에, a나 strong을 사용할 수도 있음
+  overflow: hidden;
+  border-radius: 50%;
+
+  img {
+    display: block; //공식적으로는 inline이나 행동하는것은 inline-block같이 이상하기 때문에 block으로 깔끔하게 처리
+    width: 100%;
+    height: 100%;
+    object-fit: cover; //백그라운드 커버와 비슷한 효과
+  }
+}
+
+.avatar-24 {
+  @extend %avatar-base;
+  width: 24px;
+  height: 24px;
+}
+
+.avatar-32 {
+  @extend %avatar-base;
+  width: 32px;
+  height: 32px;
+}
