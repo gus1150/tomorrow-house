@@ -1,10 +1,22 @@
 .gnb-nav {
+  $padding: 8px;
+
   &-list {
     @include flexbox(start);
+    position: relative; //방법1
+    left: -($padding); //방법1
+    //방법2 margin-left: -($padding); //로고와 커뮤니티 사이에도 8px이 더 생겨 총 40px이 생겼으므로 리스트 전체를 왼쪽으로 8px 당긴다
   }
 
   &-item {
-    margin-right: 24px;
+    margin-right: 24px - ($padding * 2);
+
+    &.is-active,
+    &:hover {
+      a {
+        color: $blue; //엑티브일때, 아래에도 a에 타이포그래피 스타일을 줬고, 그냥 active에 주면 선택자 우선 순위에 밀려 적용이 안될 수 있다.
+      }
+    }
 
     &:last-child {
       margin-right: 0;
@@ -12,6 +24,8 @@
 
     a {
       @include text-style(18, $primary);
+      display: block; //인라인이라서 패딩을 줄 수 없기때문에
+      padding: $padding;
       font-weight: 700;
     }
   }
