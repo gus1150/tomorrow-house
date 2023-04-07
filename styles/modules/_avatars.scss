@@ -1,6 +1,10 @@
 %avatar-base {
   display: block; // 무조건 div를 쓴다는 보장이 없기 때문에, a나 strong을 사용할 수도 있음
   overflow: hidden;
+  background-image: url('./assets/images/img-user-default.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
   border-radius: 50%;
 
   img {
