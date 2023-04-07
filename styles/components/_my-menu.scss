@@ -1,0 +1,58 @@
+.my-menu {
+  $tooltip-size: 12px;
+
+  position: relative;
+
+  &-content {
+    @include pos-center-x;
+    border-radius: 4px;
+    box-shadow: $dropdown-shadow;
+
+    &::before,
+    &::after {
+      //메뉴 위의 뾰족이 만들기
+      @include pos-center-x; // 이 가상요소는 my-menu-content를 기준으로 중앙정렬 해야됨, my-menu-content가 이미 absolute되어 있기 때문에 바로 X축으로 absolute 정렬
+      top: -#{$tooltip-size * 2};
+      display: block; //가상요소는 원래 인라인이기 때문에 width, height를 주려면 block
+      width: 0;
+      height: 0;
+      border-top: $tooltip-size solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: $tooltip-size solid transparent;
+      border-left: 10px solid transparent;
+      content: ''; // 가상요소 사용할 때는 무조건 사용
+    }
+
+    &::before {
+      border-bottom-color: $border;
+    }
+
+    &::after {
+      top: -#{$tooltip-size * 2 - 2px};
+      border-bottom-color: $white;
+    }
+  }
+
+  &-list {
+    width: 200px;
+    padding: 8px;
+    background-color: $white;
+    border: 1px solid $border;
+    border-radius: 4px;
+  }
+
+  &-item {
+    a,
+    button {
+      @include flexbox(start);
+      width: 100%;
+      height: 44px;
+      padding: 0 8px;
+      border-radius: 2px;
+
+      &:hover {
+        background-color: $background;
+      }
+    }
+  }
+}
