@@ -1,16 +1,21 @@
 .sidebar {
+  $sidebar-width: 240px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: $sidebar-level;
-  width: 240px;
+  width: $sidebar-width;
   height: 100vh; // 넘치는 내용물을 볼 수 있게 overflow 사용, 그러기 위해선 height값을 줘야한다.
   padding: 32px 20px;
   overflow-y: auto;
   background-color: $white;
-  //transform: translate3d(-$sidebar-width, 0, 0); // x축, y축, z축
+  transform: translate3d(-#{$sidebar-width}, 0, 0); // x축, y축, z축
   transition: transform 0.3s ease-in-out;
   overscroll-behavior: contain;
+
+  &.is-active {
+    transform: translate3d(0, 0, 0);
+  }
 
   &-header {
     padding: 0 12px;
