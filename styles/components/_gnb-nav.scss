@@ -27,6 +27,7 @@
       display: block; //인라인이라서 패딩을 줄 수 없기때문에
       padding: $padding;
       font-weight: 700;
+      white-space: nowrap;
     }
   }
 }
