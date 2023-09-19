@@ -2,10 +2,9 @@ const drawerMenuButtonList = document.querySelectorAll(
   '.sidebar-nav .drawer-menu-button'
 ) //1)
 
-console.log(drawerMenuButtonList)
 function toggleDrawerMenu() {
   //drawerMenuButton을 감싸고 있는 drawer-menu한테 is-open 추가
-  const drawerMenu = this.parentNode //this: 이벤트를 주고 있는 그 자신의 부모요소
+  const drawerMenu = this.parentNode //this: 이벤트를 주고 있는 그 자신의/ .parentNode: 부모요소
   drawerMenu.classList.toggle('is-open')
 }
 
