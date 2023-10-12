@@ -7,12 +7,14 @@ const [orderCtaBookmarkButton, orderCtaBuyButton] = orderCta.children
 const orderModal = document.querySelector('.order-form-modal')
 const orderModalOverlay = document.querySelector('.overlay')
 
-orderCtaBuyButton.addEventListener('click', function () {
+function openOderModal() {
   orderModal.classList.add('is-open')
   orderModalOverlay.classList.add('is-active')
-})
+}
+orderCtaBuyButton.addEventListener('click', openOderModal)
 
-orderModalOverlay.addEventListener('click', function () {
+function closeOderModal() {
   orderModal.classList.remove('is-open')
   orderModalOverlay.classList.remove('is-active')
-})
+}
+orderModalOverlay.addEventListener('click', closeOderModal)
