@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "node-sass": "node-sass",
-    "sass": "node-sass -wr styles/main.scss style.css"
+    "sass": "node-sass -wr --source-map true styles/main.scss style.css",
+    "sass:build": "node-sass -r --source-map true styles/main.scss style.css",
+    "build": "node ./scripts/build.js",
+    "deploy": "npm run sass:build && npm run build node ./scripts/deploy.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,14 @@
   "homepage": "https://github.com/gus1150/tomorrow-house#readme",
   "dependencies": {
     "node-sass": "^8.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "fs-extra": "^11.2.0",
+    "gh-pages": "^6.1.0",
+    "imagemin": "^8.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "postcss": "^8.4.31"
   }
 }
